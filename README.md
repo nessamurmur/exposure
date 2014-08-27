@@ -18,11 +18,9 @@ defmodule MyApp.routes.home
   end
 
   # Use the defroutes macro to define your routes
-  defroutes home_routes
-    [
-      GET "/", [:name], do: say_hello(name),
-      POST "/", [:name], do: fn(name) -> %Response{status: 401} end
-    ]
-  end
+  defroutes "home", [
+    get "/", [:name], do: quote do: say_hello(name),
+    post "/", [:name], do: fn(name) -> %Response{status: 401} end
+  ]
 end
 ```
