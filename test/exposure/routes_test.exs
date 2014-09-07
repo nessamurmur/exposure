@@ -1,5 +1,5 @@
 defmodule Exposure.RoutesTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   alias Exposure.Routes
 
   test "get" do
